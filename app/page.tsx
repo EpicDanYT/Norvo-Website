@@ -24,7 +24,7 @@ export default function Home() {
       <ProjectShowcase />
 
       {/* Why bother with a website at all */}
-      <section className="recent-work-bg wrap pb-14 sm:pb-20">
+      <section className="wrap pb-14 sm:pb-20">
         <h2 className="display max-w-2xl text-3xl sm:text-4xl">Why it's worth having one</h2>
         <ul className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-3">
           {advantages.map((a, i) => (
