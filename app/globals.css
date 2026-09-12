@@ -20,3 +20,18 @@
   .lede { @apply text-2xl leading-relaxed text-ink-soft sm:text-3xl; }
   .body-text { @apply text-xl leading-relaxed text-ink-soft; }
 }
+.recent-work-bg {
+  position: relative;
+  z-index: 0;
+}
+.recent-work-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/blob-scatter-haikei.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}

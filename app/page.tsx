@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site, promises, work, advantages } from "@/content/site";
 import Reveal from "@/components/Reveal";
 import ProjectShowcase from "@/components/ProjectShowcase";
+import { AnimatedGroup } from "@/components/ui/animated-group";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <ProjectShowcase />
 
       {/* Why bother with a website at all */}
-      <section className="wrap pb-14 sm:pb-20">
+      <section className="recent-work-bg wrap pb-14 sm:pb-20">
         <h2 className="display max-w-2xl text-3xl sm:text-4xl">Why it's worth having one</h2>
         <ul className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-3">
           {advantages.map((a, i) => (
@@ -48,10 +49,10 @@ export default function Home() {
             See all projects →
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
-          {work.map((w, i) => (
-            <Reveal key={w.name} delay={i * 80}>
+        <AnimatedGroup preset="blur-slide" className="mt-8 grid gap-6 sm:grid-cols-3">
+          {work.map((w) => (
               <a
+                key={w.name}
                 href={w.href}
                 target="_blank"
                 rel="noreferrer"
@@ -79,9 +80,8 @@ export default function Home() {
                   <p className="mt-1 text-sm text-ink-soft">{w.kind}</p>
                 </div>
               </a>
-            </Reveal>
           ))}
-        </div>
+        </AnimatedGroup>
       </section>
 
       {/* Promises — NORVO, condensed */}
